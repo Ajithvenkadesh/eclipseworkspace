@@ -1,0 +1,126 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.dbcp.BasicDataSource;
+
+public class AssigneeDao {
+
+	public static Connection getConnection() {
+		try {			
+		   /* BasicDataSource dataSource = new BasicDataSource();
+            Class.forName("org.postgresql.Driver");
+            dataSource.setDriverClassName("org.postgresql.Driver");
+            dataSource.setUrl("jdbc:postgresql://localhost/sql");
+            dataSource.setUsername("postgres");
+            dataSource.setPassword("123");
+            dataSource.setMinIdle(5);
+            dataSource.setMaxIdle(10);
+            return dataSource.getConnection();*/
+			final String url = "jdbc:postgresql://localhost/sql";
+			final String password = "123";
+			final String user = "postgres";
+			return DriverManager.getConnection(url, user, password);
+        } catch (Exception exception) {}
+		return null;
+	}
+	public static int save(Assignee e) {
+		int status = 0;
+		try {
+			Connection con = getConnection();
+			PreparedStatement ps = con.prepareStatement("insert into assignee(assignee_name, role) values (?,?)");
+			ps.setString(1, e.getAssigneName());
+			ps.setString(2, e.getRole());
+
+			status = ps.executeUpdate();
+
+			con.close();
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+
+		return status;
+	}
+
+	public static int update(Assignee e) {
+		int status = 0;
+		try {
+			Connection con = AssigneeDao.getConnection();
+			PreparedStatement ps = con
+					.prepareStatement("update assignee set assignee_name=?, role=? where assignee_id=?");
+			ps.setString(1, e.getAssigneName());
+			ps.setString(2, e.getRole());
+			ps.setInt(3, e.getAssigneeId());
+
+			status = ps.executeUpdate();
+
+			con.close();
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+
+		return status;
+	}
+
+	public static int delete(int id) {
+		int status = 0;
+		try {
+			Connection con = AssigneeDao.getConnection();
+			PreparedStatement ps = con.prepareStatement("delete from assignee where assignee_id=?");
+			ps.setInt(1, id);
+			status = ps.executeUpdate();
+
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return status;
+	}
+
+	public static Assignee getEmployeeById(int id) {
+		Assignee e = new Assignee();
+
+		try {
+			Connection con = AssigneeDao.getConnection();
+			PreparedStatement ps = con.prepareStatement("select * from assignee where assignee_id=?");
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				e.setAssigneeId(id);
+				e.setAssigneeName(rs.getString(2));
+				e.setRole(rs.getString(3));
+			}
+			con.close();
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+
+		return e;
+	}
+
+	public static List<Assignee> getAllEmployees() {
+		List<Assignee> list = new ArrayList<Assignee>();
+
+		try {
+			Connection con = AssigneeDao.getConnection();
+			PreparedStatement ps = con.prepareStatement("select * from users");
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Assignee e = new Assignee();
+				e.setAssigneeId(rs.getInt(1));
+				e.setAssigneeName(rs.getString(2));
+				e.setRole(rs.getString(3));
+				list.add(e);
+			}
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return list;
+	}
+}

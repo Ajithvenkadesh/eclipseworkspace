@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;hibernateDemo/src/main/java/com/taskManagement/hibernateDemo/Assignee2.java&apos; to &apos;AssigneeManager.java&apos;" description="Rename resource &apos;Assignee2.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/taskManagement/hibernateDemo/Assignee2.java" name="AssigneeManager.java" stamp="1658452059149" updateReferences="true"/>
+</session>

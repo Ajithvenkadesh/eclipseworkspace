@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;blueprint/src/main/resources/OSGI-INF/blueprint/my-service.xml&apos; to &apos;rest.xml&apos;" description="Rename resource &apos;my-service.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/OSGI-INF/blueprint/my-service.xml" name="rest.xml" stamp="1657710817432" updateReferences="true"/>
+</session>

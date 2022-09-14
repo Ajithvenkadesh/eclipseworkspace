@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features>
+	<feature name='moduleA' version='${project.version}'>
+		<bundle>mvn:com.system.assignee/assignee/1.0-SNAPSHOT</bundle>
+		<bundle>mvn:com.system.task/task/1.0-SNAPSHOT</bundle>
+		<bundle> mvn:com.system/orm/1.0-SNAPSHOT</bundle>
+	</feature>
+	<feature name='moduleB' version='${project.version}'>
+		<bundle>mvn:com.system/connection/1.0-SNAPSHOT</bundle>		
+	</feature>
+	 <feature name='system' version='${project.version}'>
+        <feature version='${project.version}'>moduleA</feature>
+        <feature version='${project.version}'>moduleB</feature>
+    </feature>
+</features>

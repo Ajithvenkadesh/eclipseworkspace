@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;com.taskManagement.webui/src/main/java/com/taskManagement/webui/PersonServlet.java&apos; to &apos;AssigneeServlet.java&apos;" description="Rename resource &apos;PersonServlet.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/taskManagement/webui/PersonServlet.java" name="AssigneeServlet.java" stamp="1657523085004" updateReferences="true"/>
+</session>

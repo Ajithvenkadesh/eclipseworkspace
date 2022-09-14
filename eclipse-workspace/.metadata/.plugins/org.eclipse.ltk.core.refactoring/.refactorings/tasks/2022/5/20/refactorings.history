@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;tasks/src/main/java/com/taskManagement&apos; to &apos;taskManagementSystem&apos;" description="Rename resource &apos;taskManagement&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/taskManagement" name="taskManagementSystem" stamp="1652239225380" updateReferences="true"/>
+</session>

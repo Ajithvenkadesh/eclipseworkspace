@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features  xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
+    name = "taskManagementSystem2">
+	<feature name='exception' version='${project.version}'>
+		<bundle>mvn:com.task/exception/1.0-SNAPSHOT</bundle>		
+	</feature>	
+</features>

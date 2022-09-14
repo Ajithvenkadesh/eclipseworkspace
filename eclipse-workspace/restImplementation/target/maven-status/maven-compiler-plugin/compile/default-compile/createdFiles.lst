@@ -1,0 +1,7 @@
+com\taskManagementSystem\dao\AssigneeDao.class
+com\taskManagementSystem\model\AssigneeService.class
+com\taskManagementSystem\client\ListAssigneeCommand.class
+com\taskManagementSystem\model\Assignee.class
+com\taskManagementSystem\dao\Connector.class
+com\taskManagementSystem\model\AssigneeImplementation.class
+com\taskManagementSystem\client\AddAssigneeCommand.class

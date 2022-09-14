@@ -1,0 +1,25 @@
+import java.sql.*;
+
+public class LoginDao {
+	public boolean validate(String name, String pass) {
+		boolean status = false;
+		try {
+			Class.forName("org.postgresql.Driver");
+			final String url = "jdbc:postgresql://localhost/sql";
+			final String password = "123";
+			final String user = "postgres";
+			
+			Connection con = DriverManager.getConnection(url, user, password);
+			PreparedStatement ps = con.prepareStatement("select name, password from user_table where name=? and password=?");
+			ps.setString(1, name);
+			ps.setString(2, pass);
+
+			ResultSet rs = ps.executeQuery();
+			status = rs.next();
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return status;
+	}
+}

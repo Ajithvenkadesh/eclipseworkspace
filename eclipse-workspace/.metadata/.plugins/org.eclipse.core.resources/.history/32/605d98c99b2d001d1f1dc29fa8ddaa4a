@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features  xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
+    name = "project">
+	<feature name='moduleA' version='0.0.1-SNAPSHOT'>
+		<bundle>mvn:com.system.assignee/assignee/1.0-SNAPSHOT</bundle>
+		<bundle>mvn:com.system.task/task/1.0-SNAPSHOT</bundle>
+		<bundle>mvn:com.system/orm/1.0-SNAPSHOT</bundle>
+	</feature>
+	<feature name='moduleB' version='0.0.1-SNAPSHOT'>
+		<bundle>mvn:com.system/connection/1.0-SNAPSHOT</bundle>		
+	</feature>
+	 <feature name='system' version='0.0.1-SNAPSHOT'>
+        <feature version='0.0.1-SNAPSHOT'>moduleA</feature>
+        <feature version='0.0.1-SNAPSHOT'>moduleB</feature>
+    </feature>
+</features>

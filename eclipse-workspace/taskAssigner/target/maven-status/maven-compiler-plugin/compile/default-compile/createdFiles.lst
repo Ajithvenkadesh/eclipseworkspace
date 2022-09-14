@@ -1,0 +1,7 @@
+com\taskManagementSystem\taskAssigner\model\TaskAssignerModel.class
+com\taskManagementSystem\taskAssigner\dao\TaskAssignerDao.class
+com\taskManagementSystem\taskAssigner\model\Assignee.class
+com\taskManagementSystem\taskAssigner\service\TaskAssignerService.class
+com\taskManagementSystem\taskAssigner\service\implementation\TaskAssigner.class
+com\taskManagementSystem\taskAssigner\dao\Connector.class
+com\taskManagementSystem\taskAssigner\model\Task.class

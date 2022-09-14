@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features>
+<feature name = "task" version="1.0.0">
+<bundle>mvn:com.system.assignee/assignee/1.0-SNAPSHOT</bundle>
+</feature>
+</features>
